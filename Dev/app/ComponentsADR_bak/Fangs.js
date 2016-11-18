@@ -3,102 +3,116 @@
 import React from 'react';
 import styles from '../Styles/MainADR';
 import icons from '../Assets/Icons';
-import MovieDetail from './MovieDetail';
-
 import {
   Text,
   View,
   Image,
+  Dimensions,
   ListView,
-  ActivityIndicator,
-  TouchableHighlight,
+  TouchableOpacity,
 } from 'react-native';
+var  Height=Dimensions.get('window').height;
+var iHeight=Height-88;
 
-const REQUEST_URL = 'http://www.behappyli.cn/api/ComingSoonList.json';
-
-export default React.createClass({
-  getInitialState() {
-
-    this.fetchData();
-
-    return {
-      movies: new ListView.DataSource({
-        rowHasChanged: (row1, row2) => row1 !== row2
-      }),
-      loading: false,
+class Quans extends React.Component {
+    constructor(props){
+       super(props);
+            var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+       this.state = {
+           dataSource: ds.cloneWithRows(this._genRows()),
+       };
+       console.log(this.state.dataSource);
+   }
+    Height(){
+        return{height:iHeight,backgroundColor:'#FFFAF0'}
     }
-  },
+    _genRows(){
+        const dataBlob = [
+            {imgsrc:'http://www.ubugyun.com/sgsImages/page1.jpg',title:'我叫张三',data:'2017-07-06',words:'该属性需要传入一个方法，该方法如上所示，他会从数据源中接受一条数据，以及他和他所在的section的Id，返回一个可渲染的组件来为这行数据进行渲染',img:['http://www.ubugyun.com/sgsImages/page1.jpg','http://www.ubugyun.com/sgsImages/page2.jpg'],count:'123'},
+            {imgsrc:'http://www.ubugyun.com/sgsImages/page1.jpg',title:'我叫张三',data:'2017-07-06',words:'该属性需要传入一个方法，该方法如上所示，他会从数据源中接受一条数据，以及他和他所在的section的Id，返回一个可渲染的组件来为这行数据进行渲染',img:['http://www.ubugyun.com/sgsImages/page1.jpg','http://www.ubugyun.com/sgsImages/page2.jpg'],count:'123'},
+            {imgsrc:'http://www.ubugyun.com/sgsImages/page1.jpg',title:'我叫张三',data:'2017-07-06',words:'该属性需要传入一个方法，该方法如上所示，他会从数据源中接受一条数据，以及他和他所在的section的Id，返回一个可渲染的组件来为这行数据进行渲染',img:['http://www.ubugyun.com/sgsImages/page1.jpg','http://www.ubugyun.com/sgsImages/page2.jpg'],count:'123'},
+            {imgsrc:'http://www.ubugyun.com/sgsImages/page1.jpg',title:'我叫张三',data:'2017-07-06',words:'该属性需要传入一个方法，该方法如上所示，他会从数据源中接受一条数据，以及他和他所在的section的Id，返回一个可渲染的组件来为这行数据进行渲染',img:['http://www.ubugyun.com/sgsImages/page1.jpg','http://www.ubugyun.com/sgsImages/page2.jpg'],count:'123'}
+        ];
+        return dataBlob;
+    }
 
-  fetchData() {
-    fetch(REQUEST_URL)
-      .then(response => response.json())
-      .then(responseData => {
-        this.setState({
-          movies: this.state.movies.cloneWithRows(responseData.subjects),
-          loading: true
-        })
-      })
-      .done();
-  },
 
-  showMovieDetail(movie) {
-    this.props.navigator.push({
-      title: movie.title,
-      component: MovieDetail,
-      passProps: {movie}
-    })
-  },
 
-  renderMovieList(movie) {
-    var imgSrc = '';
-    try {
-      imgSrc = movie.casts[0].avatars.large;
-    } catch(e) {
-      imgSrc = icons.none;
-    };
+    _renderRow(dataSource){
+        console.log(dataSource);
+        return (
+                <View style={styles.fangbox}>
+                    <View style={styles.fang1}>
+                        <View style={styles.leftf}>
+                            <Image style={styles.lfimg} source={{uri:dataSource.imgsrc}} >
+                            </Image>
+                        </View>
+                        <View style={styles.rightf}>
+                            <Text style={styles.fText1}>
+                                {dataSource.title}
+                            </Text>
+                            <Text style={styles.fText2}>
+                                {dataSource.data}
+                            </Text>
+                            <Text style={styles.fText3}>
+                                {dataSource.words}
+                            </Text>
+                            <View style={styles.fang1box}>
+                                <Image style={styles.oImage} source={{uri:dataSource.img[0]}}/>
+                                 <Image style={styles.oImage} source={{uri:dataSource.img[1]}}/>
+                            </View>
+                        </View>
+                    </View>
+                    <View style={styles.fang2}>
+                        <View style={styles.fang2box}>
+                            <Image style={styles.fang2img}/>
+                        </View>
+                        <View style={styles.fang2box}>
+                            <Image style={styles.fang2img} source={{uri:icons.star}}/>
+                        </View>
+                        <View style={styles.fang2box}>
+                            <Image style={styles.fang2img} source={{uri:icons.star}}/>
+                        </View>
+                        <View style={styles.fang2box}>
+                            <Image style={styles.fang2img} />
+                        </View>
+                        <View style={styles.fang2box}>
+                            <Image style={styles.fang2img}/>
+                        </View>
+                        <View style={styles.fang2box}>
+                            <Image style={styles.fang2img} />
+                        </View>
+                        <View style={styles.fang2box}>
+                            <Image style={styles.fang2img} />
+                        </View>
+                        <View style={styles.fang2box}>
+                            <Image style={styles.fang2img} source={{uri:icons.star}}/>
+                        </View>
 
-    return (
-      <TouchableHighlight
-        underlayColor="rgba(34, 26, 38, 0.1)"
-        onPress={() => this.showMovieDetail(movie)}
-      >
-        <View style={styles.item}>
-          <View style={styles.itemImage}>
-            <Image
-              source={{uri: imgSrc}}
-              style={styles.image}
-            />
-          </View>
-          <View style={styles.itemContent}>
-            <Text style={styles.itemHeader}>{movie.title}</Text>
-            <Text style={styles.itemMeta}>
-              {movie.original_title} ({movie.year})
-            </Text>
-            <Text style={styles.redText}>{movie.rating.average}</Text>
-          </View>
-        </View>
-      </TouchableHighlight>
-    )
-  },
 
+                    </View>
+                </View>
+
+            );
+    }
   render() {
-    if ( !this.state.loading ) {
-      return (
-        <View style={styles.container}>
-          <View style={styles.loading}>
-            <ActivityIndicator size="large" color="#6435c9" />
-          </View>
-        </View>
-      )
-    }
     return (
-        
-      <View style={styles.movieListContainer}>
-        <ListView
-          dataSource={this.state.movies}
-          renderRow={this.renderMovieList}
-        />
-      </View>
-    );
+        <View style={styles.box}>
+            <View style={styles.title}>
+                <View >
+                     <Image style={styles.iconImage}/>
+                </View>
+                <Text style={styles.titleText}> 饭范 </Text>
+                <View>
+                    <Image style={ styles.iconImage} source={{uri: icons.star}} />
+                </View>
+            </View>
+            <View style={styles.Indexbox,this.Height()} >
+                <ListView dataSource={this.state.dataSource} renderRow={this._renderRow}/>
+            </View>
+        </View>
+    )
   }
-});
+};
+
+export { Quans as default };

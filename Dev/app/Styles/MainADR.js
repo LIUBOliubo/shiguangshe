@@ -250,9 +250,6 @@ wrapper: {
  },
  lefttext:{
      width:130,
-     fontSize:12,
-     lineHeight:20,
-     color:'#8B7E66',
  },
  iText1:{
      fontSize:20,
@@ -263,8 +260,8 @@ wrapper: {
 },
 iText2:{
    fontSize:14,
-   width:30,
-   textAlign:'center',
+   width:60,
+   textAlign:'left',
    lineHeight:24,
    color:'black',
 },
@@ -291,10 +288,16 @@ imgbox1:{
     flexDirection:'column',
     justifyContent:'flex-start',
 },
+imgbox2:{
+    height:180,
+    backgroundColor:'yellow',
+    flexDirection:'column',
+    justifyContent:'flex-start',
+    marginBottom:10,
+},
 imgback:{
-
     height:30,
-    backgroundColor:'rgba(0,0,0,0.2)',
+    backgroundColor:'rgba(0,0,0,0.5)',
     paddingLeft:30,
 },
 textback:{
@@ -306,4 +309,78 @@ IndexImage0:{
     height:180,
     justifyContent:'flex-end',
 },
+fangbox:{
+    flex:1,
+    flexDirection:'column',
+    justifyContent:'flex-start',
+    borderStyle:'solid',
+    borderColor:'#ccc',
+    borderWidth:0.5,
+    marginBottom:12,
+    backgroundColor:'#fff',
+},
+fang1:{
+    flex:1,
+    flexDirection:'row',
+    justifyContent:'flex-start',
+    paddingTop:6,
+    paddingBottom:20,
+    paddingRight:4,
+},
+leftf:{
+    flex:2,
+    paddingTop:10,
+    justifyContent:'flex-start',
+
+    alignItems:'center',
+},
+lfimg:{
+    width:50,
+    height:50,
+    borderRadius:25,
+},
+rightf:{
+    flex:7,
+    paddingTop:10,
+    flexDirection:'column',
+    justifyContent:"flex-start",
+},
+fang2:{
+    height:30,
+    flexDirection:'row',
+},
+fText1:{
+    fontSize:18,
+    color:'black',
+    height:40,
+},
+fText2:{
+    fontSize:12,
+    color:'#32CD32',
+    height:30,
+},
+fText3:{
+    fontSize:14,
+    color:'#333',
+    paddingBottom:20,
+},
+fang2box:{
+    paddingTop:5,
+    flex:1,
+    height:30,
+},
+fang2img:{
+     width:20,
+    height:20,
+},
+fang1box:{
+    height:100,
+    flexDirection:'row',
+    justifyContent:'flex-start',
+},
+oImage:{
+    width:100,
+    height:100,
+    marginRight:10,
+}
 });

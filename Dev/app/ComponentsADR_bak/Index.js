@@ -9,26 +9,35 @@ import {
   Text,
   View,
   Image,
+  Dimensions,
+  ScrollView,
 } from 'react-native';
-
+var  Height=Dimensions.get('window').height;
+var iHeight=Height-88;
 class Index extends React.Component {
-
+        Height(){
+            return{height:iHeight}
+        }
   render() {
+      console.log(iHeight);
       const IndexImages=[
           'http://www.ubugyun.com/sgsImages/page2.jpg'
       ];
+
     return (
         <View style={styles.box}>
             <View style={styles.title}>
                 <View >
                      <Image style={styles.iconImage} source={{uri: icons.star}} />
                 </View>
-                <Text style={styles.titleText}>食光社</Text>
+                <Text style={styles.titleText}> 食光社 </Text>
                 <View>
                     <Image style={ styles.iconImage} source={{uri: icons.star}} />
                 </View>
             </View>
-            <View style={styles.Indexbox} >
+            <View style={styles.Indexbox,this.Height()} >
+                <ScrollView>
+
                 <View style={styles.swiperbox}>
                     <Swipers/>
                 </View>
@@ -68,7 +77,63 @@ class Index extends React.Component {
                                 <Text style={styles.iText3}>&gt;</Text>
                             </View>
                         </View>
+                        <View style={styles.imgbox2}>
+                            <Image  source={{uri:IndexImages[0]}} style={styles.IndexImage0}>
+                                <View style={styles.imgback}>
+                                    <Text style={styles.textback}>
+                                        吃货侦探所
+                                    </Text>
+                                </View>
+                            </Image>
+                        </View>
                         <View style={styles.imgbox1}>
+                            <Image  source={{uri:IndexImages[0]}} style={styles.IndexImage0}>
+                                <View style={styles.imgback}>
+                                    <Text style={styles.textback}>
+                                        吃货侦探所
+                                    </Text>
+                                </View>
+                            </Image>
+                        </View>
+                    </View>
+                    <View style={styles.pagebox}>
+                        <View style={styles.sgsm2}>
+                            <View style={styles.sgsm_l1}>
+                                <Text style={styles.iText1}>|</Text><Text style={styles.iText2}>强圈围观</Text>
+                            </View>
+                            <View style={styles.sgsm_r}>
+                                <Text style={styles.iText3}>&gt;</Text>
+                            </View>
+                        </View>
+                        <View style={styles.imgbox2}>
+                            <Image  source={{uri:IndexImages[0]}} style={styles.IndexImage0}>
+                                <View style={styles.imgback}>
+                                    <Text style={styles.textback}>
+                                        吃货侦探所
+                                    </Text>
+                                </View>
+                            </Image>
+                        </View>
+                        <View style={styles.imgbox1}>
+                            <Image  source={{uri:IndexImages[0]}} style={styles.IndexImage0}>
+                                <View style={styles.imgback}>
+                                    <Text style={styles.textback}>
+                                        吃货侦探所
+                                    </Text>
+                                </View>
+                            </Image>
+                        </View>
+                    </View>
+                    <View style={styles.pagebox}>
+                        <View style={styles.sgsm2}>
+                            <View style={styles.sgsm_l1}>
+                                <Text style={styles.iText1}>|</Text><Text style={styles.iText2}>菜谱</Text>
+                            </View>
+                            <View style={styles.sgsm_r}>
+                                <Text style={styles.iText3}>&gt;</Text>
+                            </View>
+                        </View>
+                        <View style={styles.imgbox2}>
                             <Image  source={{uri:IndexImages[0]}} style={styles.IndexImage0}>
                                 <View style={styles.imgback}>
                                     <Text style={styles.textback}>
@@ -89,6 +154,7 @@ class Index extends React.Component {
                     </View>
 
                 </View>
+                </ScrollView>
             </View>
         </View>
     )
