@@ -28,11 +28,11 @@ class Index extends React.Component {
         <View style={styles.box}>
             <View style={styles.title}>
                 <View >
-                     <Image style={styles.iconImage} source={{uri: icons.star}} />
+                     <Image style={styles.iconImage} source={{uri: icons.geren}} />
                 </View>
                 <Text style={styles.titleText}> 食光社 </Text>
                 <View>
-                    <Image style={ styles.iconImage} source={{uri: icons.star}} />
+                    <Image style={ styles.iconImage} source={{uri: icons.fdj}} />
                 </View>
             </View>
             <View style={styles.Indexbox,this.Height()} >
@@ -45,7 +45,7 @@ class Index extends React.Component {
                     <View style={styles.sgsm1}>
                         <View style={styles.sgsm1_l}>
                             <View style={styles.leftimg}>
-                                <Image style={styles.iconImageIndex} source={{uri: icons.star}} />
+                                <Image style={styles.iconImageIndex} source={{uri: icons.books0}} />
                             </View>
                             <View style={styles.lefttext}>
                                  <Text style={styles.lefttext}>发菜谱</Text>
@@ -53,7 +53,7 @@ class Index extends React.Component {
                         </View>
                         <View style={styles.sgsm1_r}>
                             <View style={styles.leftimg}>
-                                <Image style={styles.iconImageIndex} source={{uri: icons.star}} />
+                                <Image style={styles.iconImageIndex} source={{uri: icons.fang0}} />
                             </View>
                             <View style={styles.lefttext}>
                                  <Text style={styles.lefttext}>范一下&trade;</Text>

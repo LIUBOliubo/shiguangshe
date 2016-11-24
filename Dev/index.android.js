@@ -53,11 +53,11 @@ export default class qqqq extends Component {
     ];
 
     const tabBars = [
-      {title: '首页', imgSrcLight: icons.starActive, imgSrcDark: icons.star},
-      {title: '菜谱', imgSrcLight: icons.calendarActive, imgSrcDark:icons.calendar},
-      {title: '饭范', imgSrcLight: icons.starActive, imgSrcDark: icons.star},
-      {title: '圈子', imgSrcLight: icons.starActive, imgSrcDark: icons.star},
-      {title: '集市', imgSrcLight: icons.starActive, imgSrcDark: icons.star}
+      {title: '首页', imgSrcLight: icons.shy1, imgSrcDark: icons.shy0},
+      {title: '菜谱', imgSrcLight: icons.books1, imgSrcDark:icons.books0},
+      {title: '饭范', imgSrcLight: icons.fang1, imgSrcDark: icons.fang0},
+      {title: '圈子', imgSrcLight: icons.quan1, imgSrcDark: icons.quan0},
+      {title: '集市', imgSrcLight: icons.baskit1, imgSrcDark: icons.baskit0}
     ];
 
     let tabBarList = tabBars.map((item, index) => {

@@ -382,5 +382,99 @@ oImage:{
     width:100,
     height:100,
     marginRight:10,
+},
+quanbox:{
+    flex:1,
+    flexDirection:'column',
+},
+quanbox1:{
+    flex:1,
+    flexDirection:'column',
+    justifyContent:'flex-start',
+    backgroundColor:'#eff'
+},
+quan1:{
+
+    height:230,
+    marginBottom:12,
+    borderBottomWidth:1,
+    borderStyle:'solid',
+    borderColor:'#eee',
+    backgroundColor:'#fff',
+},
+header1:{
+    paddingLeft:10,
+    paddingRight:10,
+    height:40,
+    flexDirection:'row',
+    justifyContent:'flex-start',
+    borderBottomWidth:1.5,
+    borderStyle:'solid',
+    borderColor:'#ddd',
+},
+hleft:{
+    flex:1,
+    lineHeight:30,
+    fontSize:14,
+    color:'black',
+},
+hright:{
+    flex:1,
+    lineHeight:30,
+    textAlign:'right',
+    color:'#666',
+    fontSize:12,
+},
+tiaobox:{
+    height:60,
+    flexDirection:'row',
+
+},
+qlogo:{
+    width:60,
+    height:60,
+    justifyContent:'center',
+    alignItems:'center',
+},
+qimg:{
+    width:44,
+    height:44,
+    borderRadius:22,
+},
+qtbox:{
+    flex:1,
+    paddingLeft:6,
+    flexDirection:'column',
+    justifyContent:'flex-start',
+    borderBottomWidth:1,
+    borderStyle:'solid',
+    borderColor:'#ccc',
+
+},
+qtitle:{
+    flex:1,
+},
+qnum:{
+     flex:1,
+     flexDirection:'row',
+
+},
+htp1:{
+    textAlign:'left',
+    lineHeight:30,
+    color:'black',
+    fontSize:16,
+},
+htp2:{
+    textAlign:'left',
+    lineHeight:30,
+    fontSize:18,
+    color:'#538',
+},
+htp3:{
+    textAlign:'left',
+    lineHeight:28,
+    fontSize:12,
+    color:'black',
 }
 });

@@ -68,10 +68,10 @@ class Quans extends React.Component {
                             <Image style={styles.fang2img}/>
                         </View>
                         <View style={styles.fang2box}>
-                            <Image style={styles.fang2img} source={{uri:icons.star}}/>
+                            <Image style={styles.fang2img} source={{uri:icons.quan0}}/>
                         </View>
                         <View style={styles.fang2box}>
-                            <Image style={styles.fang2img} source={{uri:icons.star}}/>
+                            <Image style={styles.fang2img} source={{uri:icons.fengx}}/>
                         </View>
                         <View style={styles.fang2box}>
                             <Image style={styles.fang2img} />
@@ -86,7 +86,7 @@ class Quans extends React.Component {
                             <Image style={styles.fang2img} />
                         </View>
                         <View style={styles.fang2box}>
-                            <Image style={styles.fang2img} source={{uri:icons.star}}/>
+                            <Image style={styles.fang2img} source={{uri:icons.fangh}}/>
                         </View>
 
 
@@ -104,7 +104,7 @@ class Quans extends React.Component {
                 </View>
                 <Text style={styles.titleText}> 饭范 </Text>
                 <View>
-                    <Image style={ styles.iconImage} source={{uri: icons.star}} />
+                    <Image style={ styles.iconImage} source={{uri: icons.jia}} />
                 </View>
             </View>
             <View style={styles.Indexbox,this.Height()} >
